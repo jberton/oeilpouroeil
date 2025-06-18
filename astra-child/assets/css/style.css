@@ -44,8 +44,13 @@ p {
 
 /* HEADER */
 
-/* HEADER - Effet de soulignement du menu */
+/* Astra sticky menu */
+.site-header {
+ top: 0;
+ position: sticky;
+}
 
+/* HEADER - Effet de soulignement du menu */
 .main-navigation li > a {
   text-decoration: none;
   flex-direction: column;
@@ -71,22 +76,44 @@ p {
   transform: scaleX(1);
 }
 
+/* HEADER - menu panier quantité prix */
+.menu-item-256, .menu-item-38, .menu-item-37, .wpmenucartli {
+  line-height: 0 !important;
+}
+
+.wpmenucartli {
+  line-height: none;
+  margin-left: 50px;
+  padding-top: 3px;
+}
+.wpmenucartli a {
+  color: white;
+  font-size: 18px;
+  line-height: 1.6em;
+}
+
 /* FOOTER */
 
-/* FOOTER - Haut du footer : Livraison Paiement Suivez-nous */
+/* FOOTER - Haut du footer : Livraison Paiement */
 .top-footer {
   display: flex;
 	flex-direction: row;
   justify-content: center;
   color: black;
-  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: white;
 }
 
-.footer-livraison, .footer-paiement, .footer-suivez-nous {
+.footer-livraison, .footer-paiement {
   width: 25%;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.footer-livraison p {
+  text-align: center;
 }
 
 .top-footer-title{
@@ -102,7 +129,7 @@ p {
 
 .livraison-icon {
   width: 50%;
-  height: 100px;
+  height: 100px !important;
 }
 
 .paiement-icon {
@@ -110,14 +137,13 @@ p {
 }
 
 .facebook-icon {
-  height: 60px;
+  height: 60px !important;
   margin-top: 20px;
 }
 
 /* FOOTER - Menu footer */
 footer {
 	margin:auto;
-  margin-top: 20px;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -161,7 +187,207 @@ footer a:hover {
 }
 
 
-/* ACCUEIL */
+/* CONTACT */
 
-/* ACCUEIL - header */
+/* CONTACT - Formulaire de contact */
+.wpcf7-form label{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
 
+.wpcf7-form-control-wrap input {
+	width: 350px !important;
+	height: 40px;
+	border:solid 1px lightgray;
+	border-radius: 10px !important;
+	padding: 0 5px;
+	font-family: "Poppins";
+	font-size: 16px;
+	color: black;
+  margin-top: 5px;
+}
+
+.wpcf7-form-control-wrap textarea {
+	width: 350px;
+	height: 210px;
+	border:solid 1px lightgray;
+	border-radius: 10px;
+	padding: 5px 5px;
+	font-family: "Poppins";
+	font-size: 16px;
+	color: black;
+  margin-top: 5px;
+}
+
+
+/* Single page */
+.main-single{
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.post-title {
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.post-content {
+  margin-top: 20px;
+}
+
+/* Masquer le message Payer avec Link*/
+#wc-stripe-express-checkout-element {
+  display: none !important;
+}
+
+#wc-stripe-express-checkout-button-separator {
+  display: none !important;
+}
+
+
+
+/* RESPONSIVE DESIGN */
+
+/* Animation du menu hors champs */
+.ast-main-header-bar-alignment {
+  animation-duration: 0.5s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-top: -300px;
+    width: 300%;
+  }
+
+  to {
+    margin-top: 0;
+    width: 100%;
+  }
+}
+
+/* Responsive Design - Titres */
+.elementor-heading-title {
+  font-size: 28px !important;
+}
+
+/* Responsive Design - Menu */
+@media screen and (max-width: 768px) {
+  .ast-mobile-svg {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .main-navigation ul li {
+    height: 80px !important;
+    justify-content: center !important;
+  }
+
+  .main-navigation ul li a {
+    font-size: 20px !important;
+    padding-top: 15px !important;
+    color: black !important;
+  }
+
+  .main-navigation .menu-item-37 {
+    height: 80px !important;
+    padding-top: 20px !important;
+  }
+
+  .main-navigation ul {
+    display: flex !important;
+  }
+
+  .main-navigation .wpmenucart-contents {
+    padding-top: 5px !important;
+    color: black !important;
+  }
+
+  .wpmenucartli{
+    margin-left: 15px !important;
+  }
+
+}
+
+
+/* Responsive Design - Footer */
+@media screen and (max-width: 768px) {
+	.top-footer {
+		flex-direction: column;
+		align-items: center;
+		gap: 30px;
+	}
+
+  .footer-livraison, .footer-paiement {
+    width: 90%;
+  }
+}
+
+
+/* Responsive Design - Accueil */
+@media screen and (max-width: 768px) {
+  .elementor-element-383494f img, .elementor-element-1f02be7 img {
+    width: 80% !important;
+  }
+
+  .elementor-element-87577f9 {
+    margin-top: -40px !important;
+  }
+
+  .elementor-element-5139ac3 {
+    margin-left: 10px !important;
+  }
+
+}
+
+/* Responsive Design - Les livres */
+@media screen and (max-width: 768px) {
+  .elementor-282 .elementor-element.elementor-element-676afea {
+    width: 400px;
+    margin-left: -20px;
+  }
+}
+
+/* Responsive Design - Evenements */
+@media screen and (max-width: 768px) {
+  .elementor-element-3f8e13c {
+    width: 25% !important;
+  }
+  .elementor-element-489f243 {
+    width: 75% !important;
+  }
+
+  .elementor-element-15d4483 {
+    display: none !important;
+  }
+
+  .elementor-element.elementor-element-604a97b {
+    font-size: 28px !important;
+  }
+}
+
+
+/* Responsive Design - Contact */
+@media screen and (max-width: 768px) {
+  .wpcf7-form-control-wrap input {
+    width: 100% !important;
+  }
+
+  .wpcf7-form-control-wrap textarea {
+    width: 100%;
+  }
+
+  .elementor-element-b3a5c57 {
+    min-height: 50px !important;
+  }
+  .elementor-element.elementor-element-c2fadc0{
+    min-height: 150px !important;
+  }
+
+  .elementor-element-d8f6fef{
+    margin-top: 40px !important;
+    gap: 0px !important;
+  }
+}

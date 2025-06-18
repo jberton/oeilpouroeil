@@ -6,4 +6,17 @@ function load_css() {
 }
 add_action( 'wp_enqueue_scripts', 'load_css' );
 
+// Supprimer les balises p rajoutées par Contact Form7
+add_filter('wpcf7_autop_or_not', '__return_false');
+
+// Configuration du captcha vers .net pour éviter charger cookies tiers
+add_filter( 'wpcf7_use_recaptcha_net', '__return_true' );
+
+// Changer le texte "Note de commandes" dans la page de validation de comande
+function shopper_override_checkout_fields ($fields) {
+$fields["order"]["order_comments"]["placeholder"] = __("Je souhaite une dédicace pour « saisissez le prénom ».", "shopper");
+return $fields;
+}
+add_filter( "woocommerce_checkout_fields" , "shopper_override_checkout_fields" );
+
 ?>

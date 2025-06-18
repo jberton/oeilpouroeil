@@ -14,10 +14,6 @@
 			<p class="top-footer-title">Paiement</p>
 			<img class="paiement-icon" src="<?= get_stylesheet_directory_uri() . "/assets/images/paiement-carte-bancaire-stripe.png" ?>" alt="Paiement carte bancaire sécurisé avec Stripe">
 		</div>
-		<div class="footer-suivez-nous">
-			<p class="top-footer-title">Suivez-nous</p>
-			<img class="facebook-icon" src="<?= get_stylesheet_directory_uri() . "/assets/images/facebook.png" ?>" alt="Suivez-nous sur Facebook">
-		</div>	
 	</div>
 
 	<footer>	
